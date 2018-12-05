@@ -109,7 +109,7 @@ nnoremap <space> za
 " if you want to see the docstrings for folded code with SimpylFold
 let g:SimpylFold_docstring_preview=1
 
-" set indentation for other file types
+" set indentation 
 au BufNewFile,BufRead *.html, *.css, *.js
     \ setlocal tabstop=2 softtabstop=2 shiftwidth=2
 
@@ -135,20 +135,21 @@ let NERDTreeIgnore=['\.pyc$', '\~$']
 " number of spaces that a pre-existing tab is equal to
 au BufRead,BufNewFile *py,*pyw,*.c,*.h set tabstop=4
 
-" spaces for indents
-au BufRead,BufNewFile *.py,*pyw set shiftwidth=4
+" don't use actual tab character (ctrl-v)
 au BufRead,BufNewFile *.py,*.pyw set expandtab
+" indenting is 4 spaces 
+au BufRead,BufNewFile *.py,*pyw set shiftwidth=4
+" how many columns vim uses when you hit Tab in insert mode
 au BufRead,BufNewFile *.py set softtabstop=4
 
-" set indentation for Python following PEP 8
-au BufNewFile,BufRead *.py
-    \ set tabstop=4
-    \ set softtabstop=4
-    \ set shiftwidth=4
-    \ set textwidth=79
-    \ set expandtab
-    \ set autoindent
-    \ set fileformat=unix
+" turn on auto-indent
+au BufRead,BufNewFile *.py set autoindent
+
+" text width
+au BufRead,BufNewFile *.py set textwidth=79
+
+" file format
+au BufRead,BufNewFile *.py set fileformat=unix
 
 " use the below highlight group when displaying bad whitespace is desired
 highlight BadWhitespace ctermbg=red guibg=red
