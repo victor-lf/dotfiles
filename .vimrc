@@ -110,10 +110,8 @@ nnoremap <space> za
 let g:SimpylFold_docstring_preview=1
 
 " set indentation for other file types
-au BufNewFile,BufRead *.js, *.html, *.css
-    \ set tabstop=2
-    \ set softtabstop=2
-    \ set shiftwidth=2
+au BufNewFile,BufRead *.html, *.css, *.js
+    \ setlocal tabstop=2 softtabstop=2 shiftwidth=2
 
 " set Syntastic to use ESLint for JavaScript
 let g:syntastic_javascript_checkers=['eslint']
