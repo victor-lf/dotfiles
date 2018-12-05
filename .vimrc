@@ -44,7 +44,6 @@ Plugin 'tmhedberg/SimpylFold'
 " If you want to see the docstrings for folded code
 let g:SimpylFold_docstring_preview=1
 
-
 " Set indentation for Python following PEP 8
 au BufNewFile,BufRead *.py
     \ set tabstop=4
@@ -87,8 +86,10 @@ if 'VIRTUAL_ENV' in os.environ:
   execfile(activate_this, dict(__file__=activate_this))
 EOF
 
-" Syntax checking with syntastic
+" Syntax checking with Syntastic
 Plugin 'vim-syntastic/syntastic'
+" Set Syntastic to use ESLint for JavaScript files
+let g:syntastic_javascript_checkers=['eslint']
 
 " PEP 8 checking for Python
 Plugin 'nvie/vim-flake8'
