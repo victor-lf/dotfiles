@@ -140,6 +140,3 @@ Plugin 'tpope/vim-fugitive'
 " https://powerline.readthedocs.io/en/latest/
 Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 
-
-
-
