@@ -100,14 +100,46 @@ let python_highlight_all=1
 syntax on
 
 " Color Schemes
+" Gruvbox
+Plugin 'morhetz/gruvbox'
+colorscheme gruvbox
+set background=dark    " Setting dark mode
+"set background=light   " Setting light mode
+" Zenburn and Solarized 
 Plugin 'jnurmine/Zenburn'
 Plugin 'altercation/vim-colors-solarized'
 " use Solarized for GUI mode and Zenburn for terminal mode
-if has('gui_running')
-  set background=dark
-  colorscheme solarized
-else
-  colorscheme zenburn
-endif
-" toggle Solarized between dark and light with F5
+"if has('gui_running')
+"  set background=dark
+"  colorscheme solarized
+"else
+"  colorscheme zenburn
+"endif
+" toggle color schemes between dark and light with F5
 call togglebg#map("<F5>")
+
+" Install NERDTree for file browsing
+Plugin 'scrooloose/nerdtree'
+" NERDTree with tabs
+Plugin 'jistr/vim-nerdtree-tabs'
+" Hide .pyc files 
+let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
+
+" ctrlP plugin to search for basically anything from VIM 
+" (https://www.youtube.com/watch?v=9XrHk3xjYsw)
+Plugin 'ctrlpvim/ctrlp.vim'
+
+" Line numbering
+set nu
+
+" Git integration with vim-fugitive 
+" (http://vimcasts.org/episodes/fugitive-vim---a-complement-to-command-line-git/)
+Plugin 'tpope/vim-fugitive'
+
+" Powerline. A status bar that display things like the current virtualenv, git branch, files being edited, and much more.
+" https://powerline.readthedocs.io/en/latest/
+Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+
+
+
+
