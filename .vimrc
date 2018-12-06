@@ -145,9 +145,19 @@ nnoremap <space> za
 " if you want to see the docstrings for folded code with SimpylFold
 let g:SimpylFold_docstring_preview=1
 
-" set indentation for other file types
-au BufNewFile,BufRead *.html, *.css, *.js
-    \ set tabstop=2 softtabstop=2 shiftwidth=2
+" indentation 
+" number of space characters inserted with the tab key
+set tabstop=4
+" number of space characters inserted for indentation
+set shiftwidth=4 
+" tab key insert spaces instead of tab characters
+set expandtab 
+" this will not affect the existing tab characters. To change all the existing
+" tab characters to match the current tab settings, use: :retab
+
+" set indentation for specific file types
+"au BufNewFile,BufRead *.html, *.css, *.js
+"    \ set tabstop=2 softtabstop=2 shiftwidth=2
 
 " set Syntastic to use ESLint for JavaScript
 "let g:syntastic_javascript_checkers=['eslint']
