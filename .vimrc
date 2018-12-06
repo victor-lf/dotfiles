@@ -63,6 +63,9 @@ Plugin 'ervandew/supertab'
 " Python code folding
 Plugin 'tmhedberg/SimpylFold' 
 
+" linting
+Plugin 'w0rp/ale'
+
 " vim-surround
 Plugin 'tpope/vim-surround'
 
@@ -72,6 +75,9 @@ Plugin 'tomtom/tlib_vim'
 Plugin 'garbas/vim-snipmate'
 " Optional:
 Plugin 'honza/vim-snippets'
+
+" vim-tmux-navigator (Seamless navigation between tmux panes and vim splits)
+Plugin 'christoomey/vim-tmux-navigator'
 
 " color schemes
 Plugin 'morhetz/gruvbox'
@@ -148,6 +154,11 @@ let g:javascript_plugin_flow = 1
 
 " vim-jsx dont't expect that JSX files have .jsx extension
 let g:jsx_ext_required = 0
+
+" run the linter when the file is saved, rather than 
+" continuously as typing
+"let g:ale_lint_on_save = 1
+"let g:ale_lint_on_text_changed = 0
 
 " Python with virtualenv support
 py << EOF
