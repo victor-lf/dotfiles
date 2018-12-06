@@ -112,7 +112,7 @@ set background=dark    " Setting dark mode
 "  colorscheme zenburn
 "endif
 " Spacegray color scheme 
-colorscheme spacegray
+"colorscheme spacegray
 " toggle color schemes between dark and light with F5
 call togglebg#map("<F5>")
 
@@ -150,7 +150,7 @@ au BufNewFile,BufRead *.html, *.css, *.js
     \ set tabstop=2 softtabstop=2 shiftwidth=2
 
 " set Syntastic to use ESLint for JavaScript
-let g:syntastic_javascript_checkers=['eslint']
+"let g:syntastic_javascript_checkers=['eslint']
 
 " vim-javascript support for Flow
 let g:javascript_plugin_flow = 1
@@ -158,7 +158,7 @@ let g:javascript_plugin_flow = 1
 " vim-jsx dont't expect that JSX files have .jsx extension
 let g:jsx_ext_required = 0
 
-" run the linter when the file is saved, rather than 
+" run the ALE linter when the file is saved, rather than 
 " continuously as typing
 "let g:ale_lint_on_save = 1
 "let g:ale_lint_on_text_changed = 0
