@@ -24,7 +24,10 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'scrooloose/nerdtree'
 " NERDTree with tabs
 Plugin 'jistr/vim-nerdtree-tabs'
-" ctrlP plugin to search for basically anything from VIM 
+" fzf 
+Plugin 'junegunn/fzf'
+Plugin 'junegunn/fzf.vim'
+" ctrlP 
 " (https://www.youtube.com/watch?v=9XrHk3xjYsw)
 Plugin 'ctrlpvim/ctrlp.vim'
 
@@ -36,6 +39,17 @@ Plugin 'vim-scripts/Pydiction'
 
 " better auto-indentation for Python
 Plugin 'vim-scripts/indentpython.vim'
+
+" JavaScript indentation and syntax support
+Plugin 'pangloss/vim-javascript'
+
+" syntax highlighting for JSON
+Plugin 'leshill/vim-json'
+
+" Syntax highlighting and indenting for JSX. JSX is a JavaScript syntax
+" transformer which translates inline XML document fragments into JavaScript
+" objects. It was developed by Facebook alongside React.
+Plugin 'mxw/vim-jsx'
 
 " syntax checking with Syntastic
 Plugin 'vim-syntastic/syntastic'
@@ -49,10 +63,21 @@ Plugin 'ervandew/supertab'
 " Python code folding
 Plugin 'tmhedberg/SimpylFold' 
 
+" vim-surround
+Plugin 'tpope/vim-surround'
+
+" SnipMate
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+Plugin 'garbas/vim-snipmate'
+" Optional:
+Plugin 'honza/vim-snippets'
+
 " color schemes
 Plugin 'morhetz/gruvbox'
 Plugin 'jnurmine/Zenburn'
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'ajh17/Spacegray.vim'
 
 " Powerline. A status bar that display things like the current virtualenv, git branch, files being edited, and much more.
 " https://powerline.readthedocs.io/en/latest/
@@ -77,6 +102,8 @@ set background=dark    " Setting dark mode
 "else
 "  colorscheme zenburn
 "endif
+" Spacegray color scheme 
+colorscheme spacegray
 " toggle color schemes between dark and light with F5
 call togglebg#map("<F5>")
 
@@ -109,12 +136,18 @@ nnoremap <space> za
 " if you want to see the docstrings for folded code with SimpylFold
 let g:SimpylFold_docstring_preview=1
 
-" set indentation 
+" set indentation for other file types
 au BufNewFile,BufRead *.html, *.css, *.js
-    \ setlocal tabstop=2 softtabstop=2 shiftwidth=2
+    \ set tabstop=2 softtabstop=2 shiftwidth=2
 
 " set Syntastic to use ESLint for JavaScript
 let g:syntastic_javascript_checkers=['eslint']
+
+" vim-javascript support for Flow
+let g:javascript_plugin_flow = 1
+
+" vim-jsx dont't expect that JSX files have .jsx extension
+let g:jsx_ext_required = 0
 
 " Python with virtualenv support
 py << EOF
@@ -126,8 +159,13 @@ if 'VIRTUAL_ENV' in os.environ:
   execfile(activate_this, dict(__file__=activate_this))
 EOF
 
+" filesystem 
+" enable fzf inside Vim once it has been installed on the system
+" https://github.com/junegunn/fzf
+set rtp+=~/.fzf
 " ignore files in NERDTree
 let NERDTreeIgnore=['\.pyc$', '\~$'] 
+
 
 
 "------------Start Python PEP 8 stuff----------------
