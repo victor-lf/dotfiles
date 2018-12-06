@@ -79,6 +79,9 @@ Plugin 'honza/vim-snippets'
 " vim-tmux-navigator (Seamless navigation between tmux panes and vim splits)
 Plugin 'christoomey/vim-tmux-navigator'
 
+" EditorConfig plugin for Vim (http://editorconfig.org)
+Plugin 'editorconfig/editorconfig-vim'
+
 " color schemes
 Plugin 'morhetz/gruvbox'
 Plugin 'jnurmine/Zenburn'
