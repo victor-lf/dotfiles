@@ -145,19 +145,16 @@ nnoremap <space> za
 " if you want to see the docstrings for folded code with SimpylFold
 let g:SimpylFold_docstring_preview=1
 
+" For indentation without tabs, the principle is to set 'expandtab', and set
+" 'shiftwidth' and 'softtabstop' to the same value, while leaving 'tabstop' at
+" its default value. These settings will result in spaces being used for all
 " indentation 
-" number of space characters inserted with the tab key
-set tabstop=4
-" number of space characters inserted for indentation
-set shiftwidth=4 
-" tab key insert spaces instead of tab characters
-set expandtab 
-" this will not affect the existing tab characters. To change all the existing
-" tab characters to match the current tab settings, use: :retab
+"set expandtab
+"set shiftwidth=4
+"set softtabstop=4
 
-" set indentation for specific file types
-"au BufNewFile,BufRead *.html, *.css, *.js
-"    \ set tabstop=2 softtabstop=2 shiftwidth=2
+" indentation for JavaScript
+au BufRead,BufNewFile *js set expandtab shiftwidth=2 softtabstop=2
 
 " set Syntastic to use ESLint for JavaScript
 "let g:syntastic_javascript_checkers=['eslint']
@@ -193,9 +190,6 @@ let NERDTreeIgnore=['\.pyc$', '\~$']
 
 
 "------------Start Python PEP 8 stuff----------------
-
-" number of spaces that a pre-existing tab is equal to
-au BufRead,BufNewFile *py,*pyw,*.c,*.h set tabstop=4
 
 " don't use actual tab character (ctrl-v)
 au BufRead,BufNewFile *.py,*.pyw set expandtab
