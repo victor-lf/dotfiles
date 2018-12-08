@@ -38,7 +38,7 @@
 ;; BASIC CUSTOMIZATION
 ;; --------------------------------------
 
-;; Add customizations to a separate file  
+;; Add customizations to a separate file
 (setq custom-file "~/.emacs.d/custom.el")
 (load custom-file)
 
@@ -82,7 +82,7 @@
 (require 'helm-config)
 
 
-;; NeoTree (A emacs tree plugin like NERD tree for Vim)
+;; NeoTree (A Emacs tree plugin like NERDTree for Vim)
 (global-set-key [f8] 'neotree-toggle)  ; Toggle NeoTree with <F8>
 (setq neo-smart-open t)                ; Every time when the neotree window is opened,
                                        ; let it find current file and jump to node
@@ -94,8 +94,8 @@
 
 
 ;; Define a function that closes all buffers except the current one
-(defun only-current-buffer () 
-  (interactive)                                                                   
+(defun only-current-buffer ()
+  (interactive)
   (mapc 'kill-buffer (cdr (buffer-list (current-buffer)))))
 
 
@@ -128,6 +128,8 @@
 ;(load-theme 'spacemacs-dark t)
 
 
+;; Flycheck
+(global-flycheck-mode)
 
 ;; ---------------
 ;; Python
@@ -148,7 +150,7 @@
 (require 'py-autopep8)
 (add-hook 'elpy-mode-hook 'py-autopep8-enable-on-save)
 
-;; Use Jupyter console 
+;; Use Jupyter console
 ;(setq python-shell-interpreter "jupyter"
 ;      python-shell-interpreter-args "console --simple-prompt"
 ;      python-shell-prompt-detect-failure-warning nil)
@@ -221,4 +223,6 @@
 (define-key tern-mode-keymap (kbd "M-.") nil)
 (define-key tern-mode-keymap (kbd "M-,") nil)
 
+
 ;; ---------------------------------------------------------------
+;;; init.el ends here
