@@ -1,4 +1,6 @@
 ;;; init.el --- Emacs configuration
+;; -------------------------------------------------------------------------
+
 
 ;; --------------------------------------
 ;; INSTALL PACKAGES
@@ -23,6 +25,7 @@
     elpy
     flycheck
     py-autopep8
+    web-mode
     js2-mode
     js2-refactor
     xref-js2
@@ -32,6 +35,7 @@
 	  (unless (package-installed-p package)
 	    (package-install package)))
       myPackages)
+
 
 
 ;; --------------------------------------
@@ -131,9 +135,11 @@
 ;; Flycheck
 (global-flycheck-mode)
 
-;; ---------------
+
+
+;; --------------------------------------
 ;; Python
-;; ---------------
+;; --------------------------------------
 
 ;; Load Elpy
 (elpy-enable)
@@ -162,37 +168,36 @@
       python-shell-interpreter-args "-i --simple-prompt")
 
 
-
-
-;; ---------------
+;; --------------------------------------
 ;; JavaScript
-;; ---------------
+;; --------------------------------------
 
 ;; https://emacs.cafe/emacs/javascript/setup/2017/04/23/emacs-setup-javascript.html
 ;; https://emacs.cafe/emacs/javascript/setup/2017/05/09/emacs-setup-javascript-2.html
+;; http://codewinds.com/blog/2015-04-02-emacs-flycheck-eslint-jsx.html
 
 
 ;; Use js2-mode for JavaScript files
-;; ---------------------------------------------------------------
-
 (require 'js2-mode)
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
 
 (add-hook 'js2-mode-hook #'js2-imenu-extras-mode)  ;; Better imenu
 
-;; ---------------------------------------------------------------
 
+;; disable jshint since we prefer eslint checking
+(setq-default flycheck-disabled-checkers
+	      (append flycheck-disabled-checkers
+		      '(javascript-jshint)))
 
 
 ;; js2-refactor and xref-js2
-;; ---------------------------------------------------------------
-
 (require 'js2-refactor)
 (require 'xref-js2)
 
 (add-hook 'js2-mode-hook #'js2-refactor-mode)
 (js2r-add-keybindings-with-prefix "C-c C-r")
 (define-key js2-mode-map (kbd "C-k") #'js2r-kill)
+
 
 ;; js-mode (which js2 is based on) binds "M-." which conflicts with xref, so
 ;; unbind it.
@@ -201,16 +206,10 @@
 (add-hook 'js2-mode-hook (lambda ()
 			   (add-hook 'xref-backend-functions #'xref-js2-xref-backend nil t)))
 
-;; ---------------------------------------------------------------
-
-
 
 ;; company-mode with tern for auto-completion
-;; ---------------------------------------------------------------
-
 ;; sudo npm install -g tern
 ;; When completing a function, you can hit <F1> to get its documentation
-
 (require 'company)
 (require 'company-tern)
 
@@ -218,11 +217,11 @@
 (add-hook 'js2-mode-hook (lambda ()
                            (tern-mode)
                            (company-mode)))
-                           
 ;; Disable completion keybindings, as we use xref-js2 instead
 (define-key tern-mode-keymap (kbd "M-.") nil)
 (define-key tern-mode-keymap (kbd "M-,") nil)
 
 
-;; ---------------------------------------------------------------
+
+;; -------------------------------------------------------------------------
 ;;; init.el ends here
