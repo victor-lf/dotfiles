@@ -250,4 +250,3 @@ autocmd FileType python set foldmethod=indent
 nnoremap <space> za 
 
 "----------Stop python PEP 8 stuff--------------
-
