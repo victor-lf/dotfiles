@@ -31,6 +31,9 @@ Plugin 'junegunn/fzf.vim'
 " (https://www.youtube.com/watch?v=9XrHk3xjYsw)
 Plugin 'ctrlpvim/ctrlp.vim'
 
+" Vim python-mode. PyLint, Rope, Pydoc, breakpoints from box
+Plugin 'python-mode/python-mode'
+
 " Python PEP 8 syntax checker
 Plugin 'nvie/vim-flake8'
 
@@ -56,7 +59,6 @@ Plugin 'vim-syntastic/syntastic'
 
 " auto-completion stuff
 Plugin 'Valloric/YouCompleteMe'
-Plugin 'klen/rope-vim'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'ervandew/supertab'
 
