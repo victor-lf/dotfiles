@@ -170,8 +170,5 @@ bar {
 }
 
 
-# Background
-exec --no-startup-id ~/.config/i3/wallpaper.sh
-
 # Compton
 exec --no-startup-id compton --config ~/.config/i3/compton.conf
