@@ -1,0 +1,8 @@
+#! /bin/sh
+
+name=bspwm_panel
+
+./clock.sh | lemonbar -n "$name" -p &
+
+# fullscreen windows above lemonbar 
+xdo above -t "$(xdo id -n root)" "$(xdo id -a "$name")"
