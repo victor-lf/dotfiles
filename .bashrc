@@ -8,11 +8,9 @@
 alias ls='ls --color=auto'
 PS1='[\u@\h \W]\$ '
 
-# powerline
-powerline-daemon -q
-POWERLINE_BASH_CONTINUATION=1
-POWERLINE_BASH_SELECT=1
-. /usr/share/powerline/bindings/bash/powerline.sh
-
 # vi mode
 set -o vi
+
+# set fzf keybindings and completion
+source /usr/share/fzf/key-bindings.bash
+source /usr/share/fzf/completion.bash
