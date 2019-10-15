@@ -29,7 +29,8 @@
     js2-mode
     js2-refactor
     xref-js2
-    company-tern))
+    company-tern
+    org))
 
 (mapc #'(lambda (package)
 	  (unless (package-installed-p package)
@@ -49,7 +50,7 @@
 
 ;; Set font
 (add-to-list 'default-frame-alist
-             '(font . "Monospace-12"))
+             '(font . "Inconsolata-12"))
 
 
 ;; Save backup files into a dedicated directory
@@ -104,10 +105,10 @@
 
 
 ;; Load Emacs with a specified frame size
-(add-to-list 'default-frame-alist '(left . 0))
-(add-to-list 'default-frame-alist '(top . 0))
-(add-to-list 'default-frame-alist '(height . 60))
-(add-to-list 'default-frame-alist '(width . 100))
+;(add-to-list 'default-frame-alist '(left . 0))
+;(add-to-list 'default-frame-alist '(top . 0))
+(add-to-list 'default-frame-alist '(height . 30))
+(add-to-list 'default-frame-alist '(width . 60))
 
 
 ;; Load theme
