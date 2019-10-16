@@ -30,7 +30,8 @@
     js2-refactor
     xref-js2
     company-tern
-    org))
+    org
+    evil))
 
 (mapc #'(lambda (package)
 	  (unless (package-installed-p package)
