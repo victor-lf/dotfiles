@@ -1,40 +1,63 @@
-Xft.dpi:    96
+Xft.dpi:    131
 Xft.antialias: true
 Xft.hinting: true
 Xft.rgba: rgb
 Xft.autohint: false
-Xft.hintstyle: hintfull
-Xft.lcdfilter: lcddefault
+Xft.hintstyle: hintslight 
+!Xft.lcdfilter: lcddefault
+
+! ------------------------------------------------------------------------------
+! URxvt settings 
+! ------------------------------------------------------------------------------
 
 URxvt.depth: 32
-URxvt.background: [95]#000000
-URxvt*font:       xft:Monospace:size=13
-URxvt.scrollBar: false
+URxvt.background: [100]#000000
+URxvt.font:        xft:Fira Code:size=10, \
+                   xft:DejaVu Sans Mono:size=10
+URxvt.scrollBar:   false
+URxvt.perl-ext-common: default,matcher,fullscreen,clipboard,resize-font
+URxvt.url-launcher: /usr/bin/xdg-open
+URxvt.matcher.button: 1
+URxvt.resize-font.smaller: C-minus
+URxvt.resize-font.bigger: C-equal
+URxvt.clipboard.autocopy: true
 
-! Colors
-URxvt*background: #000000
-URxvt*foreground: #B2B2B2
-! black
-URxvt*color0:  #000000
-URxvt*color8:  #686868
-! red
-URxvt*color1:  #B21818
-URxvt*color9:  #FF5454
-! green
-URxvt*color2:  #18B218
-URxvt*color10: #54FF54
-! yellow
-URxvt*color3:  #B26818
-URxvt*color11: #FFFF54
-! blue
-URxvt*color4:  #1818B2
-URxvt*color12: #5454FF
-! purple
-URxvt*color5:  #B218B2
-URxvt*color13: #FF54FF
-! cyan
-URxvt*color6:  #18B2B2
-URxvt*color14: #54FFFF
-! white
-URxvt*color7:  #B2B2B2
-URxvt*color15: #FFFFFF
+
+!! Color scheme
+
+!! special
+!*.foreground:   #bebebe
+!*.background:   #000000
+!*.cursorColor:  #bebebe
+!
+!! black
+!*.color0:       #000000
+!*.color8:       #222222
+!
+!! red
+!*.color1:       #f25a5a
+!*.color9:       #ffbbbb
+!
+!! green
+!*.color2:       #77bb33
+!*.color10:      #dcf692
+!
+!! yellow
+!*.color3:       #efc334
+!*.color11:      #f6df92
+!
+!! blue
+!*.color4:       #5555dd
+!*.color12:      #b2baf6
+!
+!! magenta
+!*.color5:       #c350ff
+!*.color13:      #f09fff
+!
+!! cyan
+!*.color6:       #5af2ee
+!*.color14:      #5af2ee
+!
+!! white
+!*.color7:       #bebebe
+!*.color15:      #eeeeee
