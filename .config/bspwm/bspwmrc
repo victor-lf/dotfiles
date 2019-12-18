@@ -2,7 +2,7 @@
 
 ### AUTOSTART ###
 sxhkd &
-compton --config ~/.config/compton.conf &
+picom --config ~/.config/picom.conf &
 wal -a '95' -i ~/Pictures/ &
 ./yabar &
 
