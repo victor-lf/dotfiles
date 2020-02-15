@@ -1,13 +1,9 @@
 # The following lines were added by compinstall
 
 zstyle ':completion:*' completer _expand _complete _ignored
-zstyle ':completion:*' matcher-list 'm:{[:lower:][:upper:]}={[:upper:][:lower:]} r:|[._-]=* r:|=*'
-zstyle :compinstall filename '/home/victor/.zshrc'
 
-autoload -Uz compinit promptinit
+autoload -Uz compinit 
 compinit
-promptinit
-prompt pure
 # End of lines added by compinstall
 
 # Lines configured by zsh-newuser-install
@@ -23,6 +19,8 @@ bindkey -v
 export KEYTIMEOUT=1
 
 # set the default prompt theme
+fpath+=$HOME/.zsh/pure
+autoload -U promptinit; promptinit
 prompt pure
 
 # set some aliases
@@ -47,3 +45,4 @@ source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 # set fzf keybindings and completion
 source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh
+
